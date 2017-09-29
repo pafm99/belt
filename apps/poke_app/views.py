@@ -30,7 +30,7 @@ def dashboard(request):
     print qwe
     for user in who_poked:
         context['me'].append(user)
-    x = User.objects.values('first_name```').annotate(the_count=Count('poked'))
+    x = User.objects.values('first_name').annotate(the_count=Count('poked'))
     for y in x:
         context['t'].append(y)
     return render(request, 'poke_app/dashboard.html', context)
